@@ -13,5 +13,23 @@ public class HomePageController {
         return "homePage";
     }
 
+    @GetMapping("/gamePage")
+    public String gamePage(Model model) {
+        model.addAttribute("title", "Игровая страница");
+        return "gamePage";
+    }
+
+    @GetMapping("/informationPage")
+    public String informationPage(Model model) {
+        model.addAttribute("title", "Информационная страница");
+        return "informationPage";
+    }
+
+    @GetMapping("/loginAccountPage")
+    public String loginAccountPage(Model model) {
+        model.addAttribute("title", "Личный кабинет");
+        return "loginAccountPage";
+    }
+
 }
 
