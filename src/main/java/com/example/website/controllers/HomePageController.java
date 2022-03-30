@@ -1,11 +1,16 @@
 package com.example.website.controllers;
 
+import com.example.website.interfaces.SiteUsersInterface;
+import com.example.website.models.SiteUsers;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomePageController {
+    @Autowired
+    private SiteUsersInterface siteUsersInterface;
 
     @GetMapping("/")
     public String homePage(Model model) {
@@ -27,7 +32,13 @@ public class HomePageController {
 
     @GetMapping("/loginAccountPage")
     public String loginAccountPage(Model model) {
+        Iterable<SiteUsers> siteUsers = siteUsersInterface.findAll();
+        for (SiteUsers el:siteUsers) {
+            System.out.println(el.getLogin());
+            System.out.println(el.getPassword());
+        }
         model.addAttribute("title", "Личный кабинет");
+        model.addAttribute("siteUsers", siteUsers);
         return "loginAccountPage";
     }
 
