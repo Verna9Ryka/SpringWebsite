@@ -10,6 +10,14 @@ public class SiteUsers {
     private Long id;
     private String login, password, nickname;
 
+    public SiteUsers() {}
+
+    public SiteUsers(String login, String password, String nickname) {
+        this.login = login;
+        this.password = password;
+        this.nickname = nickname;
+    }
+
     public Long getId() {
         return id;
     }

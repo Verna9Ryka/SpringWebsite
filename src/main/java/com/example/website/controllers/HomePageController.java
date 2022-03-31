@@ -9,38 +9,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomePageController {
-    @Autowired
-    private SiteUsersInterface siteUsersInterface;
-
     @GetMapping("/")
-    public String homePage(Model model) {
+    public String homePageOpen(Model model) {
         model.addAttribute("title", "Главная страница");
         return "homePage";
     }
 
     @GetMapping("/gamePage")
-    public String gamePage(Model model) {
+    public String gamePageOpen(Model model) {
         model.addAttribute("title", "Игровая страница");
         return "gamePage";
     }
 
-    @GetMapping("/informationPage")
-    public String informationPage(Model model) {
+    @GetMapping("/infoPage")
+    public String infoPageOpen(Model model) {
         model.addAttribute("title", "Информационная страница");
-        return "informationPage";
+        return "infoPage";
     }
 
-    @GetMapping("/loginAccountPage")
-    public String loginAccountPage(Model model) {
-        Iterable<SiteUsers> siteUsers = siteUsersInterface.findAll();
-        for (SiteUsers el:siteUsers) {
-            System.out.println(el.getLogin());
-            System.out.println(el.getPassword());
-        }
+    @GetMapping("/signInPage")
+    public String signInPageOpen(Model model) {
         model.addAttribute("title", "Личный кабинет");
-        model.addAttribute("siteUsers", siteUsers);
-        return "loginAccountPage";
+        return "signInPage";
     }
-
 }
 

@@ -1,0 +1,22 @@
+#signInButton
+{
+    padding: 5 10 5 10;
+    border-color: #FF8C00;
+    border-width: 1;
+    border-radius: 25;
+    background-radius: 25;
+    background-color: #000000;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+    color: #FFD700;
+}
+
+#signInButton:hover
+{
+    background-color: #D2691E;
+}
+
+#signInButton:active
+{
+    background-color: red;
+}
