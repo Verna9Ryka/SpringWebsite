@@ -7,20 +7,20 @@
   <link type="text/css" rel="stylesheet" href="/styles/commonStyles.css">
 </head>
 <body>
-<main>
-  <form action="/regPage" method="post">
-    <h1>Регистрация</h1>
-    <div>
-      <p><input name="login" type="text" value="Логин" onBlur="if(this.value == '') this.value = 'Логин'" onFocus="if(this.value == 'Логин') this.value = ''" required></p>
-    </div>
-    <div >
-      <p><input name="password" type="password"  value="Пароль" onBlur="if(this.value == '') this.value = 'Пароль'" onFocus="if(this.value == 'Пароль') this.value = ''" required></p>
-    </div>
-    <div>
-      <p><input name="nickname" type="text" value="Имя" onBlur="if(this.value == '') this.value = 'Имя'" onFocus="if(this.value == 'Имя') this.value = ''" required></p>
-    </div>
-    <button id="signInButton" type="submit">СОХРАНИТЬ</button>
-  </form>
-</main>
+  <main>
+    <form method="post">
+      <h1>Регистрация</h1>
+      <div>
+        <p><input name="login" type="text" value="Логин" onBlur="if(this.value == '') this.value = 'Логин'" onFocus="if(this.value == 'Логин') this.value = ''" required></p>
+      </div>
+      <div >
+        <p><input name="password" type="password"  value="Пароль" onBlur="if(this.value == '') this.value = 'Пароль'" onFocus="if(this.value == 'Пароль') this.value = ''" required></p>
+      </div>
+      <div>
+        <p><input name="nickname" type="text" value="Имя" onBlur="if(this.value == '') this.value = 'Имя'" onFocus="if(this.value == 'Имя') this.value = ''" required></p>
+      </div>
+      <button id="regButton" type="submit">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+    </form>
+  </main>
 </body>
 </html>

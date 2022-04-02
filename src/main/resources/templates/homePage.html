@@ -6,7 +6,10 @@
     <link type="text/css" rel="stylesheet" href="/styles/commonStyles.css">
 </head>
 <body>
-<div th:insert="fragmentsTemplates/menuSite :: menu"></div>
-<p th:text="${title}"></p>
+    <!--<div th:insert="fragmentsTemplates/menuSite :: menu"></div>-->
+    <div th:insert="fragmentsTemplates/menuSite :: menu(${siteUserID})"></div>
+    <!--<div th:include="fragmentsTemplates/menuSite :: menu(newWorkerForm, @{/worker/new}, 'newWorker')"></div>-->
+    <!--div th:include="fragmentsTemplates/menuSite :: menu" th:with="newWorker=${newWorkerValue}"></div>-->
+    <p th:text="${title}"></p>
 </body>
 </html>

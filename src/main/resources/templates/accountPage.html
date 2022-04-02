@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/styles/signInPage.css">
+    <link type="text/css" rel="stylesheet" href="/styles/commonStyles.css">
+</head>
+<body>
+    <!--<div th:insert="fragmentsTemplates/menuSite :: menu"></div>-->
+    <div th:insert="fragmentsTemplates/menuSite :: menu(${siteUserID})"></div>
+    <main>
+        <form th:each="el : ${siteUserList}" th:action="'/accountPage/' + ${el.getId()}" method="post">
+            <h1>Регистрация</h1>
+            <div>
+                <p><input name="login" type="text" th:value="${el.getLogin()}" required></p>
+            </div>
+            <div >
+                <p><input name="password" type="text"  th:value="${el.getPassword()}" required></p>
+            </div>
+            <div>
+                <p><input name="nickname" type="text" th:value="${el.getNickname()}" required></p>
+            </div>
+            <button name="updateButton" type="submit">СОХРАНИТЬ</button>
+            <br>
+            <form th:action="'/accountPage/' + ${el.getId()}" method="post">
+                <button name="deleteButton" type="submit">УДАЛИТЬ</button>
+            </form>
+        </form>
+    </main>
+</body>
+</html>

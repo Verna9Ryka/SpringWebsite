@@ -7,15 +7,16 @@
     <link type="text/css" rel="stylesheet" href="/styles/commonStyles.css">
 </head>
 <body>
-    <div th:insert="fragmentsTemplates/menuSite :: menu"></div>
+    <!--<div th:insert="fragmentsTemplates/menuSite :: menu"></div>-->
+    <div th:insert="fragmentsTemplates/menuSite :: menu(${siteUserID})"></div>
     <main>
-        <form>
+        <form method="post">
             <h1>Вход в личный кабинет</h1>
             <div>
-                <p><input name="login" type="text" value="Логин" onBlur="if(this.value == '') this.value = 'Логин'" onFocus="if(this.value == 'Логин') this.value = ''" required></p>
+                <p><input name="login" type="text" value="Логин" onBlur="if(this.value == '') this.value = 'Логин'" onFocus="if(this.value == 'Логин') this.value = ''" required><label name="loginHint"></label></p>
             </div>
             <div >
-                <p><input name="password" type="password"  value="Пароль" onBlur="if(this.value == '') this.value = 'Пароль'" onFocus="if(this.value == 'Пароль') this.value = ''" required></p>
+                <p><input name="password" type="password"  value="Пароль" onBlur="if(this.value == '') this.value = 'Пароль'" onFocus="if(this.value == 'Пароль') this.value = ''" required><label name="passwordHint"></label></p>
             </div>
             <p>Нет аккаунта? <a href="/regPage">Регистрация</a></p>
             <div>

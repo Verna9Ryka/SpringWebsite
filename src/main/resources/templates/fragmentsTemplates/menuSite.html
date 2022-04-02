@@ -1,8 +1,9 @@
-<div th:fragment="menu" class="menuSite">
+<div th:fragment="menu(siteUserID)" class="menuSite">
     <ul>
         <li><a href="/">Главная</a></li>
         <li><a href="/gamePage">ИГРА</a></li>
         <li><a href="/infoPage">ИНФОРМАЦИЯ</a></li>
-        <li><a href="/signInPage">ЛИЧНЫЙ КАБИНЕТ</a></li>
+        <li><a href="/signInPage">ВХОД</a></li>
+        <li><a href="'/accountPage/' + ${siteUserID}">ЛИЧНЫЙ КАБИНЕТ</a></li>
     </ul>
 </div>
